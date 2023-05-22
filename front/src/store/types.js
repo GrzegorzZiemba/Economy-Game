@@ -1,0 +1,5 @@
+export const LOGIN_TO_ACCOUNT = "LOGIN_TO_ACCOUNT";
+export const LOGOUT = "LOGOUT";
+export const CREATE_ACCOUNT = "CREATE_ACCOUNT";
+export const ERROR_LOGIN_ACCOUNT = "ERROR_LOGIN_ACCOUNT";
+export const GET_TRADER = "GET_TRADER";

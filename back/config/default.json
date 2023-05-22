@@ -1,0 +1,10 @@
+{
+    "Customer":{
+        "dbConfig":{
+            "host": "localhost",
+            "port": 3000,
+            "dbName": "customer"
+        }
+    },
+    "mongoUrl": "mongodb+srv://grzezie:Ziomek123.@gamefication.wganabz.mongodb.net/?retryWrites=true&w=majority"
+}

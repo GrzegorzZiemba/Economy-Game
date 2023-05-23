@@ -4,8 +4,10 @@ import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { logoutAccount } from "../store/actions/userActions";
 import SignupComponent from "../components/SignupComponent";
+import { useNavigate } from "react-router";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   let checkLocalStorage = localStorage.getItem("userId");
   return (
@@ -14,6 +16,7 @@ const LoginPage = () => {
         <Button
           onClick={() => {
             dispatch(logoutAccount());
+            navigate("/");
           }}
         >
           Logout

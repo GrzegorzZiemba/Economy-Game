@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
 import * as Yup from "yup";
@@ -8,6 +8,7 @@ import "../index.css";
 import { Button } from "react-bootstrap";
 
 const SignupComponent = () => {
+  const navigate = useNavigate();
   return (
     <Formik
       initialValues={{ username: "", email: "", password: "" }}
@@ -24,6 +25,8 @@ const SignupComponent = () => {
           email: values.email,
           password: values.password,
         });
+
+        navigate("/");
       }}
     >
       <Form as="form">

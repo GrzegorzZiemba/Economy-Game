@@ -32,7 +32,8 @@ router.post("/logout", async (req, res) => {
   const id = mongoose.Types.ObjectId(userId);
   try {
     const user = await Account.findById({ _id: id });
-    user.tokens = "";
+    console.log(user);
+    console.log("====");
     user.save();
     res.status(200).send({ text: "Logged Out!" });
   } catch (error) {

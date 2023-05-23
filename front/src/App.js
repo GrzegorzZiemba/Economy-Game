@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import TradePage from "./pages/TradePage";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

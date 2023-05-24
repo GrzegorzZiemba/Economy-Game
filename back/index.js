@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const tradeRoutes = require("./routes/tradeRoutes");
 const accountRoutes = require("./routes/accountRoutes");
 const gameRoutes = require("./routes/gameRoutes");
+const buildRoutes = require("./routes/buildRoutes");
 const db = require("./database/mongodb");
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded());
 app.use(accountRoutes);
 app.use(gameRoutes);
 app.use(tradeRoutes);
+app.use(buildRoutes);
 
 app.listen(5000, () => {
   console.log("ServerWorking");

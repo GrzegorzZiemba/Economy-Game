@@ -10,6 +10,7 @@ const IronMine = require("../dbSchemas/buildings/ironMineSchema");
 const Sawmill = require("../dbSchemas/buildings/sawmillSchema");
 const Walls = require("../dbSchemas/buildings/wallSchema");
 const Warehouse = require("../dbSchemas/buildings/warehouseSchema");
+const House = require("../dbSchemas/buildings/houseSchema");
 const router = express.Router();
 
 router.post("/gettrader", auth, async (req, res) => {
@@ -27,7 +28,7 @@ router.post("/gettrader", auth, async (req, res) => {
       const sawmill = await Sawmill.findById(city.sawmill);
       const walls = await Walls.findById(city.walls);
       const warehouse = await Warehouse.findById(city.warehouse);
-
+      const house = await House.findById(city.house);
       console.log(traderWarehouse);
       res.status(201).send({
         money: traderWarehouse.money,
@@ -43,6 +44,7 @@ router.post("/gettrader", auth, async (req, res) => {
         sawmill: { ...sawmill },
         walls: { ...walls },
         warehouse: { ...warehouse },
+        house: { ...house },
       });
     }
   } catch (err) {

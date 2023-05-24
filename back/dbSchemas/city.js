@@ -11,7 +11,7 @@ const city = new Schema({
   shipyard: { type: mongoose.Types.ObjectId, ref: "shipyard" },
   walls: { type: mongoose.Types.ObjectId, ref: "walls" },
   warehouse: { type: mongoose.Types.ObjectId, ref: "warehouse" },
-  houses: { type: mongoose.Types.ObjectId, ref: "houses" },
+  house: { type: mongoose.Types.ObjectId, ref: "house" },
 });
 
 const City = mongoose.model("City", city);

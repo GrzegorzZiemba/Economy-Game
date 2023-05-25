@@ -1,5 +1,5 @@
-import BuildingQueue from "../dbSchemas/buildingQueue";
-import substractingCost from "./substractingCost";
+const BuildingQueue = require("../dbSchemas/buildingQueue");
+const substractingCost = require("./substractingCost");
 
 function addSeconds(numOfSeconds, date) {
   date.setSeconds(date.getSeconds() + numOfSeconds);
@@ -7,7 +7,7 @@ function addSeconds(numOfSeconds, date) {
   return date;
 }
 
-export async function (city, resources, building, buildingName) {
+async function build(city, resources, building, buildingName) {
   if (
     resources.stone > building.stone &&
     resources.wood > building.wood &&
@@ -37,3 +37,5 @@ export async function (city, resources, building, buildingName) {
     return "Not DOne";
   }
 }
+
+module.exports = build;

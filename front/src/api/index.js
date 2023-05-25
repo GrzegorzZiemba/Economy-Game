@@ -37,3 +37,21 @@ export const createAccount = (credentials) => {
     url: `${url}/register`,
   });
 };
+
+export const upgradeBuilding = (id, token, building) => {
+  console.log("----");
+
+  console.log(id);
+  console.log(token);
+  console.log(building);
+  console.log("----");
+  return axios({
+    method: "post",
+    headers: {
+      Authorization: `${token}`,
+    },
+
+    url: `${url}/city/upgrade/${id}`,
+    data: { building: building },
+  });
+};

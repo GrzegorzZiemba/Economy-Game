@@ -8,3 +8,5 @@ export const GET_TRADER = "GET_TRADER";
 
 export const LOGOUT = "LOGOUT";
 export const ERROR_LOGOUT_ACCOUNT = "ERROR_LOGOUT_ACCOUNT";
+
+export const UPGRADE_BUILDING = "UPGADE_BUILDING";

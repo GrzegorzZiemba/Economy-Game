@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const buildingQueue = new mongoose.Schema({
   id: { type: mongoose.Types.ObjectId, ref: "city" },

@@ -1,1 +1,32 @@
-setInterval();
+const BuildingQueue = require("../dbSchemas/buildingQueue");
+const GoldMine = require("../dbSchemas/buildings/goldMineSchema");
+const City = require("../dbSchemas/city");
+const upgrade = require("./upagrde");
+setInterval(async function () {
+  const checkQueueLength = await BuildingQueue.countDocuments({});
+
+  if (checkQueueLength > 0) {
+    const thatTime = new Date();
+    const queue = await BuildingQueue.find({});
+
+    queue.forEach(async (element) => {
+      if (thatTime > element.buildingTime) {
+        if (element.building === "goldMine") {
+          const goldMine = await GoldMine.findById({ _id: element.buildingId });
+          const city = await City.findById({ _id: element.id });
+          upgrade(city, goldMine);
+
+          await GoldMine.findOneAndUpdate(
+            { _id: element.buildingId },
+            { building: false, finishTime: 0 }
+          );
+
+          await BuildingQueue.deleteOne({ _id: element._id });
+        } else {
+        }
+      }
+    });
+  }
+}, 1000);
+
+module.exports = setInterval;

@@ -1,4 +1,4 @@
-export default async function (resources, buildingType) {
+async function substractingCost(resources, buildingType) {
   const resourcesStone = resources.stone - buildingType.stone;
   const resourcesWood = resources.wood - buildingType.wood;
   const resourcesIronOre = resources.ironOre - buildingType.ironOre;
@@ -8,3 +8,5 @@ export default async function (resources, buildingType) {
     ironOre: resourcesIronOre,
   });
 }
+
+module.exports = substractingCost;

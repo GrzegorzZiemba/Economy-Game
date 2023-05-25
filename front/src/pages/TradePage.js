@@ -27,7 +27,7 @@ const TradePage = () => {
             <li> {trader.iron} Iron </li>
           </ul>
           <Building
-            buildingName="Gold Mine"
+            buildingName="goldmine"
             level={trader?.goldMine?._doc.level}
             buildTime={trader?.goldMine?._doc.buildTime}
             isBuild={trader?.goldMine?._doc.building}

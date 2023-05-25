@@ -1,5 +1,8 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+import { upgradeBuilding } from "../store/actions/gameActions";
 
 const Building = ({
   buildingName,
@@ -14,6 +17,10 @@ const Building = ({
   defence = 0,
   canons = 0,
 }) => {
+  const userId = localStorage.getItem("userId");
+  const userToken = localStorage.getItem("userInfo");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src="holder.js/100px180" />
@@ -36,7 +43,15 @@ const Building = ({
           {canons > 0 ? <h2> you've got {canons} </h2> : ""}
         </Card.Text>
         {!isBuild ? (
-          <Button variant="primary">Build</Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              dispatch(upgradeBuilding(userId, userToken, buildingName));
+              navigate("/trading");
+            }}
+          >
+            Build
+          </Button>
         ) : (
           <h2>Building</h2>
         )}

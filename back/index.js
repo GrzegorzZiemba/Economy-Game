@@ -8,6 +8,9 @@ const gameRoutes = require("./routes/gameRoutes");
 const buildRoutes = require("./routes/buildRoutes");
 const db = require("./database/mongodb");
 
+const checkQueue = require("./middleware/checkBuildingQueue");
+
+checkQueue;
 const app = express();
 app.use(cors());
 

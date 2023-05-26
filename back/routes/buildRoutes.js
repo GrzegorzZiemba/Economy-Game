@@ -19,7 +19,7 @@ router.post("/city/upgrade/:id", auth, async (req, res) => {
     const cityResources = await resources.findById({
       _id: buildingUser.resources,
     });
-    if (req.body.building === "goldMine") {
+    if (req.body.building === "goldmine") {
       const goldMine = await GoldMine.findById({ _id: city.goldMine });
       build(city, cityResources, goldMine, building);
 

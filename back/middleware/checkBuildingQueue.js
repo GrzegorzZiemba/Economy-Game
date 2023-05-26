@@ -4,14 +4,14 @@ const City = require("../dbSchemas/city");
 const upgrade = require("./upagrde");
 setInterval(async function () {
   const checkQueueLength = await BuildingQueue.countDocuments({});
-
+  console.log("HERE");
   if (checkQueueLength > 0) {
     const thatTime = new Date();
     const queue = await BuildingQueue.find({});
 
     queue.forEach(async (element) => {
       if (thatTime > element.buildingTime) {
-        if (element.building === "goldMine") {
+        if (element.building === "goldmine") {
           const goldMine = await GoldMine.findById({ _id: element.buildingId });
           const city = await City.findById({ _id: element.id });
           upgrade(city, goldMine);

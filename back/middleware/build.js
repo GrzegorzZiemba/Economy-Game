@@ -8,10 +8,14 @@ function addSeconds(numOfSeconds, date) {
 }
 
 async function build(city, resources, building, buildingName) {
+  console.log("BUILDING");
+  console.log(resources);
+  console.log(building);
+  console.log(buildingName);
   if (
     resources.stone > building.stone &&
     resources.wood > building.wood &&
-    resources.ironOre > building.ironOre &&
+    resources.iorn > building.ironOre &&
     !building.building
   ) {
     const now = new Date();
@@ -30,7 +34,7 @@ async function build(city, resources, building, buildingName) {
     });
     await queue.save();
 
-    substractingCost(resources, buildingType);
+    substractingCost(resources, building);
 
     return "Done";
   } else {

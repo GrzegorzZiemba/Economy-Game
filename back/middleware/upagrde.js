@@ -6,7 +6,7 @@ async function upgrade(city, buildingType) {
   const ironOre = Math.floor((buildingType.ironOre + 1) * 1.2);
   const buildTime = Math.floor(buildingType.buildTime * 1.2);
 
-  await buildType.update({
+  await buildingType.update({
     level: level,
     production: production,
     stone: stone,

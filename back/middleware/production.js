@@ -45,7 +45,7 @@ setInterval(async function () {
     if (controlNumber == 3 || controlNumber == 9) {
       const ironOreElement = await IronMine.findById(city.ironMine);
       if (!ironOreElement.building) {
-        const ironOreStock = resources.ironOre;
+        const ironOreStock = resources.iron;
         const ironOreProduction = ironOreElement.production;
         const sumIronOre = ironOreStock + ironOreProduction;
         await resources.update({

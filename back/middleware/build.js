@@ -15,7 +15,7 @@ async function build(city, resources, building, buildingName) {
   if (
     resources.stone > building.stone &&
     resources.wood > building.wood &&
-    resources.iorn > building.ironOre &&
+    resources.iron > building.ironOre &&
     !building.building
   ) {
     const now = new Date();

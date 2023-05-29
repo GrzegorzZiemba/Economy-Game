@@ -7,7 +7,7 @@ const accountRoutes = require("./routes/accountRoutes");
 const gameRoutes = require("./routes/gameRoutes");
 const buildRoutes = require("./routes/buildRoutes");
 const db = require("./database/mongodb");
-
+const production = require("./middleware/production");
 const checkQueue = require("./middleware/checkBuildingQueue");
 
 checkQueue;

@@ -38,13 +38,13 @@ const TradePage = () => {
           />
           <Building
             buildingName="Iron Mine"
-            level={trader?.iornMine?._doc.level}
-            buildTime={trader?.iornMine?._doc.buildTime}
-            isBuild={trader?.iornMine?._doc.building}
-            stone={trader?.iornMine?._doc.stone}
-            wood={trader?.iornMine?._doc.wood}
-            ironOre={trader?.iornMine?._doc.ironOre}
-            production={trader?.iornMine?._doc.production}
+            level={trader?.ironMine?._doc.level}
+            buildTime={trader?.ironMine?._doc.buildTime}
+            isBuild={trader?.ironMine?._doc.building}
+            stone={trader?.ironMine?._doc.stone}
+            wood={trader?.ironMine?._doc.wood}
+            ironOre={trader?.ironMine?._doc.ironOre}
+            production={trader?.ironMine?._doc.production}
           />
           <Building
             buildingName="Sawmill"

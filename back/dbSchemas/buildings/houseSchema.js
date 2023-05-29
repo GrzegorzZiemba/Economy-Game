@@ -11,7 +11,6 @@ const houseSchema = new Schema({
   building: { type: Boolean, default: false },
   finishTime: { type: Date },
   production: { type: Number, default: 1 },
-  productionTime: { type: Number, default: 1000 },
 });
 
 const House = mongoose.model("House", houseSchema);

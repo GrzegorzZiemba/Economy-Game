@@ -7,7 +7,6 @@ const StoneMineSchema = require("../dbSchemas/buildings/stoneMineSchema");
 const GoldMine = require("../dbSchemas/buildings/goldMineSchema");
 const SilverMineSchema = require("../dbSchemas/buildings/silverMineSchema");
 const IronMine = require("../dbSchemas/buildings/ironMineSchema");
-const Sawmill = require("../dbSchemas/buildings/sawmillSchema");
 const Walls = require("../dbSchemas/buildings/wallSchema");
 const Warehouse = require("../dbSchemas/buildings/warehouseSchema");
 const House = require("../dbSchemas/buildings/houseSchema");
@@ -25,7 +24,6 @@ router.post("/gettrader", auth, async (req, res) => {
       const goldMine = await GoldMine.findById(city.goldMine);
       const silverMine = await SilverMineSchema.findById(city.silverMine);
       const ironMine = await IronMine.findById(city.ironMine);
-      const sawmill = await Sawmill.findById(city.sawmill);
       const walls = await Walls.findById(city.walls);
       const warehouse = await Warehouse.findById(city.warehouse);
       const house = await House.findById(city.house);
@@ -35,13 +33,12 @@ router.post("/gettrader", auth, async (req, res) => {
         wood: traderWarehouse.wood,
         stone: traderWarehouse.stone,
         gold: traderWarehouse.gold,
-        iron: traderWarehouse.iorn,
+        iron: traderWarehouse.iron,
         woodcutter: { ...woodcutter },
         stoneMine: { ...stoneMine },
         goldMine: { ...goldMine },
         silverMine: { ...silverMine },
-        iornMine: { ...ironMine },
-        sawmill: { ...sawmill },
+        ironMine: { ...ironMine },
         walls: { ...walls },
         warehouse: { ...warehouse },
         house: { ...house },
@@ -78,7 +75,7 @@ router.post("/tradenpc", auth, async (req, res) => {
           //trade
         }
       } else if (resource === "iron") {
-        currentQty = traderWarehouse.iorn;
+        currentQty = traderWarehouse.iron;
         if (currentQty > qtyResource) {
           //trade
         }

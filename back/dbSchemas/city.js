@@ -7,7 +7,6 @@ const city = new Schema({
   goldMine: { type: mongoose.Types.ObjectId, ref: "goldMine" },
   silverMine: { type: mongoose.Types.ObjectId, ref: "silverMine" },
   ironMine: { type: mongoose.Types.ObjectId, ref: "ironMine" },
-  sawmill: { type: mongoose.Types.ObjectId, ref: "sawmill" },
   shipyard: { type: mongoose.Types.ObjectId, ref: "shipyard" },
   walls: { type: mongoose.Types.ObjectId, ref: "walls" },
   warehouse: { type: mongoose.Types.ObjectId, ref: "warehouse" },

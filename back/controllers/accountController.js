@@ -7,7 +7,6 @@ const StoneMine = require("../dbSchemas/buildings/stoneMineSchema");
 const GoldMine = require("../dbSchemas/buildings/goldMineSchema");
 const SilverMine = require("../dbSchemas/buildings/silverMineSchema");
 const IronMine = require("../dbSchemas/buildings/ironMineSchema");
-const Sawmill = require("../dbSchemas/buildings/sawmillSchema");
 const Shipyard = require("../dbSchemas/buildings/shipyardSchema");
 const Walls = require("../dbSchemas/buildings/wallSchema");
 const Warehouse = require("../dbSchemas/buildings/warehouseSchema");
@@ -36,8 +35,6 @@ const createAccountController = async (req, res) => {
     await silverMine.save();
     const ironMine = new IronMine();
     await ironMine.save();
-    const sawmill = new Sawmill();
-    await sawmill.save();
     const shipyard = new Shipyard();
     await shipyard.save();
     const walls = new Walls();
@@ -52,7 +49,6 @@ const createAccountController = async (req, res) => {
       goldMine: goldMine._id,
       silverMine: silverMine._id,
       ironMine: ironMine._id,
-      sawmill: sawmill._id,
       shipyard: shipyard._id,
       walls: walls._id,
       warehouse: warehouse._id,

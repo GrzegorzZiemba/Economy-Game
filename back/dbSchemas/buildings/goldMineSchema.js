@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const goldMine = new Schema({
   production: { type: Number, default: 1 },
   level: { type: Number, default: 1 },
-  productionTime: { type: Number, default: 360 },
   stone: { type: Number, default: 1 },
   wood: { type: Number, default: 1 },
   ironOre: { type: Number, default: 1 },

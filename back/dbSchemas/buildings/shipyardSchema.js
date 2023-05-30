@@ -12,7 +12,7 @@ const shipyard = new Schema({
   building: { type: Boolean, default: false },
   finishTime: { type: Date },
   capacity: { type: Number, default: 1 },
-  constantTimeToBuildShip: { type: Number, default: 60 },
+  constantTimeToBuildShip: { type: Number, default: 1300 },
 });
 
 const Shipyard = mongoose.model("Shipyard", shipyard);

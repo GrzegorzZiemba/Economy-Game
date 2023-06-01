@@ -5,6 +5,7 @@ const buildingQueue = new mongoose.Schema({
   buildingTime: Date,
   building: String,
   buildingId: mongoose.Types.ObjectId,
+  buildingShip: String,
 });
 
 const BuildingQueue = mongoose.model("BuildingQueue", buildingQueue);

@@ -14,21 +14,30 @@ setInterval(async function () {
 
         upgrade(city, goldMine);
 
-        await Ships.findOneAndUpdate({
-          onDutyShips: [
-            ...onDutyShips,
+        if (ship.buildingShip === "barque") {
+          // add costs of the ships and what type of ship will be added
+          await Ships.findOneAndUpdate(
+            { _id: element.buildingId },
             {
-              name: { type: String },
-              canonLevel: { type: Number },
-              type: { type: String },
-              level: { type: Number },
-              capacityLeve: { type: Number },
-              crewLevel: { type: Number },
-              speedLevel: { type: Number },
-              healthLevel: { type: Number },
-            },
-          ],
-        });
+              onDutyShips: [
+                ...onDutyShips,
+                {
+                  name: { type: String },
+                  canonLevel: { type: Number },
+                  type: { type: String },
+                  level: { type: Number },
+                  capacityLeve: { type: Number },
+                  crewLevel: { type: Number },
+                  speedLevel: { type: Number },
+                  healthLevel: { type: Number },
+                },
+              ],
+            }
+          );
+        } else if (ship.buildingShip === "briq") {
+        } else if (ship.buildingShip === "fregate") {
+        } else if (ship.buildingShip === "galeon") {
+        }
 
         await shipBuildingQueue.deleteOne({ _id: element._id });
       } else {

@@ -27,6 +27,6 @@ setInterval(async function () {
       }
     });
   }
-}, 1000);
+}, 2000);
 
 module.exports = setInterval;
